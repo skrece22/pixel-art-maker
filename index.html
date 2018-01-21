@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pixel Art Maker!</title>
+    <link href="https://fonts.googleapis.com/css?family=Finger+Paint" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Mountains+of+Christmas" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet"> 
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Lab: Pixel Art Maker</h1>
+    <h2>Choose Grid Size</h2>
+    <form id="sizePicker" class="box-layout">
+        <div class="box-layout-item">
+            Grid Height:
+            <input class="input"type="number" id="input_height" name="height" min="1" value="1">
+        </div>
+        <div class="box-layout-item">
+            Grid Width:
+            <input class="input" type="number" id="input_width" name="width" min="1" value="1">
+        </div>
+        <div class="box-layout-item">
+            <input class="button" type="submit">
+        </div>
+    </form>
+
+    <h2>Pick A Color</h2>
+    <input class="input-color"id="colorPicker" type="color" name='colorPicker'>
+    <div class="box-layout">
+        <div class="box-layout-item">
+            <h2>Border</h1>
+            <button class="border button" disabled>Remove Border</button>
+        </div>
+        <div class="box-layout-item">
+            <h2>Eraser</h1>
+            <button class="eraser button" disabled>Click to Erase!</button>
+        </div>
+    </div>
+    <h2>Design Canvas</h2>
+    <table id="pixel_canvas"></table>
+
+    <script src="designs.js"></script>
+</body>
+</html>

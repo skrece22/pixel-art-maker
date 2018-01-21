@@ -1,0 +1,100 @@
+body{
+    text-align: center;
+    background-color: #ffeffe;
+}
+
+h1 {
+    font-family: 'Finger Paint', cursive;
+    font-size: 70px;
+    margin: 0.2em;
+}
+
+h2 {
+    font-family: 'Mountains of Christmas', cursive;
+    margin: 1em 0 0.25em;
+}
+
+h2:first-of-type {
+    margin-top: 0.5em;
+}
+
+table,
+tr,
+td {
+    border: 1px solid black;
+}
+
+.removedBorder{
+    border: 0;
+}
+
+.box-layout {
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    justify-content: center;
+}
+
+.box-layout-item {
+    margin: 0 10px;
+    justify-content: center;
+}
+
+.button{
+    background: #1c88bf;
+    border: 0;
+    color: white;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 300;
+    padding: 10px;
+}
+
+.button:disabled{
+    background: #cecece;
+    pointer-events: none;
+}
+
+.button:hover{
+    background: #105577;
+}
+
+table {
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin: 0 auto;
+    background: white;
+}
+
+tr {
+    height: 20px;
+}
+
+td {
+    width: 20px;
+}
+
+input[type=number] {
+    width: 6em;
+}
+
+.input {
+    border: 1px solid #cacccd;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 10px;
+}
+
+.input-color {
+    border: 1px solid #cacccd;
+    background: white;
+    height: 50px;
+    padding: 5px;
+}
+
+.input-color:hover{
+    background: #e6e6e6;
+}
