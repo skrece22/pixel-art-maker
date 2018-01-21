@@ -9,6 +9,7 @@ const colorPicker = $("#colorPicker");
 
 let gridHeight = document.getElementById("input_height").value;
 let gridWidth = document.getElementById("input_width").value;
+let pixelSize = document.getElementById("input_pixel").value;
 let color = document.getElementById("colorPicker").value;
 
 let mouseDown = false;
@@ -16,8 +17,9 @@ let borderRemoved = false;
 let eraserOn = false;
 
 
-//Setting default Color for colorPicker
+//Setting default Color for colorPickers
 colorPicker.val("#aabbcc");
+$('#bgColor').val("#fcfc10");
 
 //Colorpicker Listener
 colorPicker.change(function (evt) {
@@ -84,7 +86,9 @@ form.submit(function (evt) {
   resetEraser();
   gridHeight = evt.target.height.value;
   gridWidth = evt.target.width.value;
+  pixelSize = evt.target.pixel.value;
   makeGrid(gridHeight, gridWidth, color);
+  setPixelSize();
 });
 
 //make grid function
@@ -115,7 +119,14 @@ function resetBorder() {
 function resetEraser() {
   if ($('.eraser').text() === 'Click to Draw!') {
     eraserOn = false;
-    color = colorPicker.val();
     $('.eraser').text("Click to Erase!")
   }
+  color = colorPicker.val();
+}
+
+//set Pixel size
+
+function setPixelSize() {
+  $('tr').css("height", pixelSize);
+  $('td').css("width", pixelSize);
 }

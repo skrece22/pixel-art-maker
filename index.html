@@ -14,20 +14,27 @@
     <form id="sizePicker" class="box-layout">
         <div class="box-layout-item">
             Grid Height:
-            <input class="input"type="number" id="input_height" name="height" min="1" value="1">
+            <input class="input"type="number" id="input_height" name="height" min="1" value="10">
         </div>
         <div class="box-layout-item">
             Grid Width:
-            <input class="input" type="number" id="input_width" name="width" min="1" value="1">
+            <input class="input" type="number" id="input_width" name="width" min="1" value="10">
         </div>
         <div class="box-layout-item">
-            <input class="button" type="submit">
+            Pixel size:
+            <input class="input" type="number" id="input_pixel" name="pixel" min="1" value="20">
+        </div>
+        <div class="box-layout-item">
+            <input class="button" type="submit" value="Create Grid">
         </div>
     </form>
 
-    <h2>Pick A Color</h2>
-    <input class="input-color"id="colorPicker" type="color" name='colorPicker'>
+    
     <div class="box-layout">
+        <div class="box-layout-item">
+            <h2>Pick A Color</h2>
+            <input class="input-color"id="colorPicker" type="color" name='colorPicker'>
+        </div>
         <div class="box-layout-item">
             <h2>Border</h1>
             <button class="border button" disabled>Remove Border</button>
