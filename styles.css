@@ -1,4 +1,4 @@
-body{
+body {
     text-align: center;
     background-color: #cefef5;
 }
@@ -22,6 +22,7 @@ table,
 tr,
 td {
     border: 0.2px solid #c9c9c9;
+    box-sizing: border-box;
 }
 
 table {
@@ -43,7 +44,7 @@ input[type=number] {
     width: 6em;
 }
 
-.removedBorder{
+.removedBorder {
     border: 0;
 }
 
@@ -62,7 +63,7 @@ input[type=number] {
     justify-content: center;
 }
 
-.button{
+.button {
     background: #1c88bf;
     border: 0;
     color: white;
@@ -72,12 +73,12 @@ input[type=number] {
     padding: 10px;
 }
 
-.button:disabled{
+.button:disabled {
     background: #cecece;
     pointer-events: none;
 }
 
-.button:hover{
+.button:hover {
     background: #105577;
 }
 
@@ -95,6 +96,6 @@ input[type=number] {
     padding: 5px;
 }
 
-.input-color:hover{
+.input-color:hover {
     background: #e6e6e6;
 }

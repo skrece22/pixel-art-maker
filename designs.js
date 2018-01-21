@@ -1,5 +1,5 @@
-$(window).on('load', function () {
-  $('button').attr('disabled', 'disabled');
+$(window).on("load", function() {
+  $("button").attr("disabled", "disabled");
 });
 
 //Variables
@@ -18,68 +18,68 @@ let eraserOn = false;
 
 //Setting default Color for colorPickers
 colorPicker.val("#aabbcc");
-$('#bgColor').val("#fcfc10");
+$("#bgColor").val("#fcfc10");
 
 //Colorpicker Listener
-colorPicker.change(function (evt) {
-  if(!eraserOn){
+colorPicker.change(function(evt) {
+  if (!eraserOn) {
     color = evt.target.value;
-  } else{
+  } else {
     resetEraser();
   }
 });
 
-// Mouse Listeners for performing drawing 
-pixelCanvas.on("mousedown", "td", function (evt) {
+// Mouse Listeners for performing drawing
+pixelCanvas.on("mousedown", "td", function(evt) {
+  evt.preventDefault();
   $(evt.target).css("background-color", color);
   mouseDown = true;
 });
 
-$('html').on("mouseup","td", function (evt) {
+$("html").on("mouseup", function(evt) {
   mouseDown = false;
 });
 
-pixelCanvas.on("mouseover", "td", function (evt) {
+pixelCanvas.on("mouseover", "td", function(evt) {
   if (mouseDown) {
     $(evt.target).css("background-color", color);
   }
 });
 
 // Adding or Removing border
-$('.border').click(function () {
+$(".border").click(function() {
   var $this = $(this);
   borderRemoved = !borderRemoved;
   removeBorder();
-  if(borderRemoved){
-    $this.text("Add Border")
-  }
-  else {
-    $this.text("Remove Border")
+  if (borderRemoved) {
+    $this.text("Add Border");
+  } else {
+    $this.text("Remove Border");
   }
 });
 
 // A function to remove table, td, tr border
 function removeBorder() {
-  $('td').toggleClass('removedBorder');
-  $('table').toggleClass('removedBorder');
-  $('tr').toggleClass('removedBorder');
+  $("td").toggleClass("removedBorder");
+  $("table").toggleClass("removedBorder");
+  $("tr").toggleClass("removedBorder");
 }
 
 // Enable or Disable Eraser
-$('.eraser').click(function () {
+$(".eraser").click(function() {
   var $this = $(this);
   eraserOn = !eraserOn;
   if (eraserOn) {
     color = "#FFFFFF";
-    $this.text("Click to Draw!")
+    $this.text("Click to Draw!");
   } else {
     color = colorPicker.val();
-    $this.text("Click to Erase!")
+    $this.text("Click to Erase!");
   }
 });
 
 //Form
-form.submit(function (evt) {
+form.submit(function(evt) {
   evt.preventDefault();
   resetBorder();
   resetEraser();
@@ -103,26 +103,29 @@ function makeGrid(height, width) {
 }
 
 //reset border
+
 function resetBorder() {
-  $('button').removeAttr('disabled');
-  if ($('.border').text() === 'Add Border') {
+  $("button").removeAttr("disabled");
+  if ($(".border").text() === "Add Border") {
     borderRemoved = false;
-    $('.border').text("Remove Border");
+    $(".border").text("Remove Border");
     removeBorder();
   }
 }
 
 //resetEraser
+
 function resetEraser() {
-  if ($('.eraser').text() === 'Click to Draw!') {
+  if ($(".eraser").text() === "Click to Draw!") {
     eraserOn = false;
-    $('.eraser').text("Click to Erase!")
+    $(".eraser").text("Click to Erase!");
   }
   color = colorPicker.val();
 }
 
 //set Pixel size
+
 function setPixelSize() {
-  $('tr').css("height", pixelSize);
-  $('td').css("width", pixelSize);
+  $("tr").css("height", pixelSize);
+  $("td").css("width", pixelSize);
 }
