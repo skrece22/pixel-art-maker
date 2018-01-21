@@ -16,7 +16,6 @@ let mouseDown = false;
 let borderRemoved = false;
 let eraserOn = false;
 
-
 //Setting default Color for colorPickers
 colorPicker.val("#aabbcc");
 $('#bgColor').val("#fcfc10");
@@ -104,7 +103,6 @@ function makeGrid(height, width) {
 }
 
 //reset border
-
 function resetBorder() {
   $('button').removeAttr('disabled');
   if ($('.border').text() === 'Add Border') {
@@ -115,7 +113,6 @@ function resetBorder() {
 }
 
 //resetEraser
-
 function resetEraser() {
   if ($('.eraser').text() === 'Click to Draw!') {
     eraserOn = false;
@@ -125,7 +122,6 @@ function resetEraser() {
 }
 
 //set Pixel size
-
 function setPixelSize() {
   $('tr').css("height", pixelSize);
   $('td').css("width", pixelSize);
